@@ -1,27 +1,22 @@
 class Solution {
     public int jump(int[] nums) {
-        int totaljumps=0;
-        int dest=nums.length-1;
-        int coverage=0;
-        int lastjumpindex=0;
-        if(nums.length==1) return 0;
+       if(nums.length<=1){
+        return 0;
+       }
+       int jumps=0;
+       int far=0;
+       int curr=0;
 
-        for(int i=0;i<nums.length;i++){
+       for(int i=0;i<nums.length-1;i++){
+        far=Math.max(far,i + nums[i] );
+       
 
-            coverage=Math.max(coverage,i+nums[i]);
-
-            if(i==lastjumpindex){
-                lastjumpindex=coverage;
-                totaljumps++;
-
-                if(coverage>=dest){
-                    return totaljumps;
-                }
-            }
-        }
-
-
-
-        return totaljumps;
+       if(i==curr){
+        jumps++;
+        
+       
+       curr=far;
+       }}
+       return jumps;
     }
 }
