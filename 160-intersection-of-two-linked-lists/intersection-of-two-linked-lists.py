@@ -23,7 +23,7 @@ class Solution:
             else:
                 b=headA
         
-        return a
+        return b
 
 
         
